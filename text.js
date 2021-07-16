@@ -7,16 +7,25 @@ const HEADER = `
 ██╔╝ ██╗███████║███████║      ███████╗╚██████╔╝██████╔╝███████╗
 ╚═╝  ╚═╝╚══════╝╚══════╝      ╚══════╝ ╚═════╝ ╚═════╝ ╚══════╝
 ===============================================================`;
-const RESULT_START = `
-ASCII to HTML Entity Number for XSS:
-----------------(start)-----------------`;
+const RESULT_START = `Text to HTML Entity Number for XSS:
+---------------------------(start)-----------------------------`;
 
-const RESULT_END = `
------------------(end)------------------`;
+const RESULT_END = `---------------------------(end)-----------------------------`;
 
 const USAGE = `
 USAGE: node index.js <filename>
 
-Please try again.`;
+The file should contain the precise HTML code that you would like encoded.
+
+EXAMPLE
+Input (my_file.dat):
+<script>
+    alert("pwned!");
+</script>
+
+Output (HTML Number Entities):
+&#60;&#115;&#99;&#114;&#105;&#112;&#116;&#62;&#13;&#32;&#32;&#97;&#108;&#101;&#114;&#116;&#40;&#34;&#112;&#119;&#110;&#101;&#100;&#33;&#34;&#41;&#59;&#13;&#60;&#47;&#115;&#99;&#114;&#105;&#112;&#116;&#62;&#13;
+
+Please try again.\n`;
 
 module.exports = { HEADER, USAGE, RESULT_END, RESULT_START };
