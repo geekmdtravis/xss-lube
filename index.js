@@ -1,6 +1,6 @@
 const dict = require("./dict");
 
-const transformToAmpCodes = (htmlCode) => {
+const asciiToHtmlEntityEnc = (htmlCode) => {
   return htmlCode
     .split("")
     .map((c) => {
@@ -22,6 +22,6 @@ var htmlCode = `
 </script>
 `;
 
-var xssCode = transformToAmpCodes(htmlCode);
+var xssCode = asciiToHtmlEntityEnc(htmlCode);
 
 console.log(xssCode);
