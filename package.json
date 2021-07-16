@@ -1,0 +1,30 @@
+{
+  "name": "xss-lube",
+  "version": "0.1.0",
+  "description": "If you need to put some code where it doesn't want to fit, sometimes you need to prepare it first. In this case, one might want to turn ASCII text into HTML number entitites. This is useful for cross-site-scripting (XSS), for example. ",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geekmdtravis/xss-lube.git"
+  },
+  "keywords": [
+    "xss",
+    "cross",
+    "site",
+    "scripting",
+    "penetration",
+    "testing",
+    "reflected",
+    "xss"
+  ],
+  "author": "Travis Nesbit, MD (geekmdtravis)",
+  "license": "GPL-3.0+",
+  "bugs": {
+    "url": "https://github.com/geekmdtravis/xss-lube/issues"
+  },
+  "homepage": "https://github.com/geekmdtravis/xss-lube#readme"
+}
