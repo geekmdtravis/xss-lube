@@ -6,6 +6,8 @@ At times it can be quite challenging to inject XSS code. Whether server side or 
 
 This tool will take a cleverly crafted text document and convert it's contents into HTML Entity Numbers, thereby eliminating most if not all cases under which otherwise valid exploits are hampered by how a character is handled by the server or HTML renderer.
 
+**Dependencies**: NodeJS - consider installing the [Node Version Manager (NVM)](https://github.com/nvm-sh/nvm) to resolve this dependency.
+
 Example (test.html):
 
 ```html
@@ -15,7 +17,10 @@ Example (test.html):
 ```
 
 Run the following code:
-
+```sh
+npm run start test.html
+```
+Or, with Yarn:
 ```sh
 yarn start test.html
 ```
