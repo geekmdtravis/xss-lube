@@ -43,3 +43,6 @@ TEST.HTML - Text to HTML Entity Number for XSS:
 ```
 
 The string of HTML Entity Numbers can be used in place of cumbersome characters in your exploit, allowing you to slide right in.
+
+## Caution
+As always, there is a lot of nuance in exploiting vulnerable web applications. And you have to gain and understanding of the environment. This tool will not work well in all cases. And, encoded text put into an input field will behave differently than text embedded into a page, etc. So, please temper your expectations. ^_^
