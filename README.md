@@ -1,8 +1,8 @@
 # xss-lube
 
-A tool to assist penetrating pages with XSS code.
+A tool to assist penetrating pages with XSS code that needs to find its way into HTML attributes.
 
-At times it can be quite challenging to inject XSS code. Whether server side or with HTML rendering, using certain characters can lead to undesirable outcomes. This is particularly true in reflected XSS.
+At times it can be quite challenging to inject XSS code. Whether server side or with HTML rendering, using certain characters can lead to undesirable outcomes. This is particularly true in server-side reflected XSS that involves exploitation of an HTML attribute.
 
 This tool will take a cleverly crafted text document and convert it's contents into HTML Entity Numbers, thereby eliminating most if not all cases under which otherwise valid exploits are hampered by how a character is handled by the server or HTML renderer.
 
