@@ -4,7 +4,7 @@ A tool to assist penetrating pages with XSS code that needs to find its way into
 
 At times it can be quite challenging to inject XSS code. Whether server side or with HTML rendering, using certain characters can lead to undesirable outcomes. This is particularly true in server-side reflected XSS that involves exploitation of an HTML attribute.
 
-This tool will take a cleverly crafted text document and convert it's contents into HTML Entity Numbers, thereby eliminating most if not all cases under which otherwise valid exploits are hampered by how a character is handled by the server or HTML renderer.
+This tool will take a cleverly crafted text document and convert it's contents into HTML Entity Numbers, thereby circumventing some cases in which otherwise valid exploits are hampered by how a character is handled by the server or HTML renderer.
 
 **Dependencies**: NodeJS - consider installing the [Node Version Manager (NVM)](https://github.com/nvm-sh/nvm) to resolve this dependency.
 
