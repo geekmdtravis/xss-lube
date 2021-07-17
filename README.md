@@ -8,6 +8,8 @@ This tool will take a cleverly crafted text document and convert it's contents i
 
 **Dependencies**: NodeJS - consider installing the [Node Version Manager (NVM)](https://github.com/nvm-sh/nvm) to resolve this dependency.
 
+## Example
+
 Example (test.html):
 
 ```html
@@ -46,3 +48,6 @@ The string of HTML Entity Numbers can be used in place of cumbersome characters 
 
 ## Caution
 As always, there is a lot of nuance in exploiting vulnerable web applications. And you have to gain and understanding of the environment. This tool will not work well in all cases. And, encoded text put into an input field will behave differently than text embedded into a page, etc. So, please temper your expectations. ^_^
+
+## Obligatory Warning
+Hacking is illegal, this tool is not intended for illegal activity and the author cannot be held responsible for such use. Please use responsibly either in your own home lab or for legitimate work where you've required established satisfactory legal, business, and moral grounds to perform any penetration testing. 
