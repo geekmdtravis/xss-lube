@@ -34,7 +34,7 @@ This should work, and when reflected and re-rendered these HTML Entity Numbers w
 But that's quite tedious, especially for longer programs. Ideally, you'll get your reflected XSS exploit working with minimal struggle in the domain of string manipulation so you can save your time working out other technical problems.
 
 ## XSS-Lube to the Rescue
-This tool will take a cleverly crafted text document and convert it's contents into [HTML Entity](https://developer.mozilla.org/en-US/docs/Glossary/Entity) Numbers, thereby circumventing some cases in which otherwise valid exploits are hampered by how a character is handled by the server or HTML renderer.
+This tool will take a cleverly crafted text document and convert it's contents into [HTML Entity](https://developer.mozilla.org/en-US/docs/Glossary/Entity) Numbers, thereby circumventing some cases in which otherwise valid exploits are hampered by how a character is handled by the server on HTML renderer.
 
 **Dependencies**: NodeJS - consider installing the [Node Version Manager (NVM)](https://github.com/nvm-sh/nvm) to resolve this dependency.
 
