@@ -2,7 +2,7 @@
 
 A tool to assist penetrating pages with XSS code that needs to find its way into HTML attributes.
 
-At times it can be quite challenging to inject XSS code when the code's contents will be interpreted as HTML. This is particularly true in server-side reflected XSS that involves exploitation of an HTML attributes which can require some fairly tedious string manipulation. In cases where HTML you're in an HTML element and manipulating an attribute, you'll not want certain reserved characters to be interpreted as HTML characters. 
+At times it can be quite challenging to inject XSS code when the code's contents will be interpreted as HTML. This is particularly true in server-side reflected XSS that involves exploitation of an HTML attribute which can require some fairly tedious string manipulation since, when you're exploiting an HTML element and manipulating an attribute you'll not want certain reserved characters to be interpreted as HTML characters. 
 
 ## Conditions of Success
 To date, this has been tested against PHP servers where form data is reflected on POST. Additional uses are yet to be tested.
